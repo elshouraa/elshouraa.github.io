@@ -2,14 +2,13 @@
 title: Acoustic challenge write-up
 date: 2026-10-20 00:00:00 +0200
 categories:
-  - Write-ups
+  - CyberDefenders
 ---
 
 LEVEL : Medium
 
 from cyberdefenders
-
-[Blue team CTF Challenges | Acoustic — CyberDefenders](https://cyberdefenders.org/blueteam-ctf-challenges/acoustic/)
+https://cyberdefenders.org/blueteam-ctf-challenges/acoustic/
 
 — — — — — — — — — — — — — — — — — — — — — — —
 
