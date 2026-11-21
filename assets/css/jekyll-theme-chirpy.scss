@@ -1,0 +1,65 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* smooth scrolling + lively cards */
+html {
+  scroll-behavior: smooth;
+}
+
+#post-list .card-wrapper {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+#post-list .card-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgb(0 0 0 / 28%);
+}
+
+/* accent color: dark mode و light mode كل واحد بلونه */
+:root {
+  --accent-dark: #4cc2ff;
+  --accent-light: #0b6bcb;
+}
+
+:root[data-bs-theme='light'] {
+  --link-color: var(--accent-light);
+}
+
+:root[data-bs-theme='dark'] {
+  --link-color: var(--accent-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-bs-theme]) {
+    --link-color: var(--accent-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-bs-theme]) {
+    --link-color: var(--accent-light);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  #post-list .card-wrapper {
+    transition: none;
+  }
+}
